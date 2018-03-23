@@ -1,0 +1,6 @@
+*.DS_Store
+*.bak
+config/parameters.php
+nbproject/
+_DS_Store
+_psd
