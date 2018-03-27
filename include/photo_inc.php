@@ -5,12 +5,13 @@
     </a>
     <div class="infos">
 
-        <h3><?php echo $photo["titre"]; ?> #<?php echo $photo["categorie_id"]; ?></h3>
-
-        <?php if (count($photo["tags"]) > 0) : ?>
+        <h3><?php echo $photo["titre"]; ?> #<?php echo $photo["categorie"]; ?></h3>
+        
+        <?php $liste_tags = getAllTagsByPhoto($photo["id"]); ?>
+        <?php if (count($liste_tags) > 0) : ?>
             <p>
-                <?php foreach ($photo["tags"] as $tag): ?>
-                    #<?php echo $tag; ?>
+                <?php foreach ($liste_tags as $tag): ?>
+                    #<?php echo $tag["titre"]; ?>
                 <?php endforeach; ?>
             </p>
 
@@ -18,8 +19,6 @@
 
         <p><?php echo $photo["date_creation_format"]; ?></p>
         
-        <p><?php echo $photo["description"]; ?></p>
-
     </div>
 </article>
 
